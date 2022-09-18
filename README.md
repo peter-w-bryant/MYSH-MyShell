@@ -43,17 +43,16 @@ I think it is important to note that alias is an example of a "built-in" command
 
 There are three ways that alias can be invoked in my shell. 
 <ul>
-If the user types the word alias, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. alias ll /bin/ls -l -a). (Special cases: If the alias-name was already being used, I just replace the old value with the new value). If the user just types alias, my shell displays all the aliases that have been set up with one per line (first the alias-name, then a single space, and then the corresponding replacement value, with each token separated by exactly one space).
+If the user types the word alias, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. <i>alias ls /bin/ls -l -a</i>). (Special case: If the alias-name was already being used, I just replace the old value with the new value). If the user just types alias, my shell displays all the aliases that have been set up with one per line (first the alias-name, then a single space, and then the corresponding replacement value, with each token separated by exactly one space).
 
-If the user types alias followed by a word, if the word matches a current alias-name, my shell print the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.  
+If the user types alias followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.  
 
 In my shell, the user can also unalias alias-names; if the user types unalias <alias-name> my shell removes the alias from its list. If <alias-name> does not exist as an alias, it will just continue. If the user does not specify <alias-name> or there are too many arguments to unalias my shell prints 
 "unalias: Incorrect number of arguments." and continues.
 
-
-You should be able to handle an arbitrary number of aliases.
-You do not need to worry about aliases to other aliases, aliases that involve redirection, or redirection of aliases. There are only three words that cannot be used as alias-names: alias, unalias, and exit.   For example, if the user types alias alias some-string, alias unalias some-string, or alias exit some-string, your shell should print to stderr alias: Too dangerous to alias that.\n and continue.
-To actually use an alias, the user types the alias just as they would type any other command:
-mysh> alias ll /bin/ls -l
-mysh> ll
-Running an alias with additional arguments (e.g. ll -a where ll is an alias-name) is undefined behavior. We will not test this. All alias calls will consist of only the alias-name.
+Important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types "alias alias some-string", "alias unalias some-string", or "alias exit some-string", my shell prints to stderr "alias: Too dangerous to alias that." and continues.
+  
+To actually use an alias, the user can just type the alias as they would type any other command:
+mysh> alias ls /bin/ls -l
+mysh> ls
+Note: Currently, running an alias with additional arguments (e.g. ls -a where ls is an alias-name) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name.
