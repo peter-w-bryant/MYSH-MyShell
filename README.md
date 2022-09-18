@@ -47,8 +47,7 @@ There are three ways that alias can be invoked in my shell.
 
 <li>If the user types alias followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.</li>
 
-<li>In my shell, the user can also unalias alias-names; if the user types unalias "alias-name" my shell removes the alias from its list. If "alias-name" does not exist as an alias, it will just continue. If the user does not specify <alias-name> or there are too many arguments to unalias my shell prints 
-"unalias: Incorrect number of arguments." and continues.</li>
+<li>In my shell, the user can also unalias alias-names; if the user types <i>unalias alias-name</i> my shell removes the alias from its list. If "alias-name" does not exist as an alias, it will just continue. If the user does not specify "alias-name" or there are too many arguments to unalias my shell prints "unalias: Incorrect number of arguments." and continues.</li>
 
 </ul>
 Important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types "alias alias some-string", "alias unalias some-string", or "alias exit some-string", my shell prints to stderr "alias: Too dangerous to alias that." and continues.
