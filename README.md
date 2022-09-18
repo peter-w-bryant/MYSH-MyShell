@@ -31,9 +31,29 @@ As for a few special cases I have implemented:
 .. are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
 
 ### 2.3) Aliases
-Many shells also contain functionality for aliases.   To see the aliases that are currently active in your Linux shell, you can type alias.    Basically, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
+At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
+
 For example, you could set up:
-mysh> alias ls /bin/ls
-so that within this shell session, the user can simply type ls and the executable /bin/ls will be run.
-Note that alias is an example of a "built-in" command. A built-in command means that the shell interprets this command directly; the shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how the shell itself runs.  
-There are three ways that alias can be invoked in your shell. 
+
+<i>mysh> alias ls /bin/ls</i>
+
+so that within their shell session, the user can simply type ls and the executable /bin/ls will be run.
+
+I think it is important to note that alias is an example of a "built-in" command. A built-in command means that my shell interprets this command directly; my shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how my shell itself runs.  
+
+There are three ways that alias can be invoked in my shell. 
+<ul>
+If the user types the word alias, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. alias ll /bin/ls -l -a). (Special cases: If the alias-name was already being used, I just replace the old value with the new value). If the user just types alias, my shell displays all the aliases that have been set up with one per line (first the alias-name, then a single space, and then the corresponding replacement value, with each token separated by exactly one space).
+
+If the user types alias followed by a word, if the word matches a current alias-name, my shell print the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.  
+
+In my shell, the user can also unalias alias-names; if the user types unalias <alias-name> my shell removes the alias from its list. If <alias-name> does not exist as an alias, it will just continue. If the user does not specify <alias-name> or there are too many arguments to unalias my shell prints 
+"unalias: Incorrect number of arguments." and continues.
+
+
+You should be able to handle an arbitrary number of aliases.
+You do not need to worry about aliases to other aliases, aliases that involve redirection, or redirection of aliases. There are only three words that cannot be used as alias-names: alias, unalias, and exit.   For example, if the user types alias alias some-string, alias unalias some-string, or alias exit some-string, your shell should print to stderr alias: Too dangerous to alias that.\n and continue.
+To actually use an alias, the user types the alias just as they would type any other command:
+mysh> alias ll /bin/ls -l
+mysh> ll
+Running an alias with additional arguments (e.g. ll -a where ll is an alias-name) is undefined behavior. We will not test this. All alias calls will consist of only the alias-name.
