@@ -86,4 +86,4 @@ My shell can also handle the following scenarios, which are not errors:
    <li>Multiple white spaces on an otherwise empty command line.</li>
    <li>Multiple white spaces between command-line arguments, including before the first command on a line and after the last command.</li>
    <li>Batch file ends without exit command or user types 'Ctrl-D' as a command in interactive mode.</li>
-</ul>
+</ul> 
