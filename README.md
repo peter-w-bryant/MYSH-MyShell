@@ -52,11 +52,11 @@ There are three ways that alias can be invoked in my shell.
 </ul>
 One important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types <i>alias alias some-string</i>, <i>alias unalias some-string</i>, or <i>alias exit some-string</i>, my shell prints to stderr "alias: Too dangerous to alias that." and continues.
   
-To actually use an alias, the user can just type the alias as they would type any other command:<br />
+To actually use an alias, the user can just type the alias as they would type any other command:<br /><br />
 <i>
 mysh> alias ls /bin/ls -l
 mysh> ls
-</i><br />
+</i><br /><br />
 Note: Currently, running an alias with additional arguments (e.g. <i>ls -a where ls is an alias-name</i>) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name.
 
 # Running my shell locally
