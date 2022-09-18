@@ -1,0 +1,60 @@
+
+*** Start testing mysh...
+
+*** Compiler output for mysh
+
+*** Testing output for mysh
+[32mtest 1: passed[0m
+[32mtest 2: passed[0m
+[32mtest 3: passed[0m
+[32mtest 4: passed[0m
+[32mtest 5: passed[0m
+[32mtest 6: passed[0m
+[32mtest 7: passed[0m
+[32mtest 8: passed[0m
+[32mtest 9: passed[0m
+[32mtest 10: passed[0m
+[32mtest 11: passed[0m
+[32mtest 12: passed[0m
+[32mtest 13: passed[0m
+[32mtest 14: passed[0m
+[32mtest 15: passed[0m
+[32mtest 16: passed[0m
+[32mtest 17: passed[0m
+[32mtest 18: passed[0m
+[32mtest 19: passed[0m
+[32mtest 20: passed[0m
+[32mtest 21: passed[0m
+[32mtest 22: passed[0m
+[32mtest 23: passed[0m
+[32mtest 24: passed[0m
+[32mtest 25: passed[0m
+[32mtest 26: passed[0m
+[32mtest 27: passed[0m
+[32mtest 28: passed[0m
+[32mtest 29: passed[0m
+[32mtest 30: passed[0m
+[32mtest 31: passed[0m
+[32mtest 32: passed[0m
+[32mtest 33: passed[0m
+[32mtest 34: passed[0m
+[32mtest 35: passed[0m
+[32mtest 36: passed[0m
+[32mtest 37: passed[0m
+*** SUMMARY: 37 / 37
+
+*** Valgrind output for mysh
+==2278400== Memcheck, a memory error detector
+==2278400== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2278400== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==2278400== Command: ./mysh tests/19.in
+==2278400== 
+==2278400== 
+==2278400== HEAP SUMMARY:
+==2278400==     in use at exit: 0 bytes in 0 blocks
+==2278400==   total heap usage: 42 allocs, 42 frees, 5,199 bytes allocated
+==2278400== 
+==2278400== All heap blocks were freed -- no leaks are possible
+==2278400== 
+==2278400== For lists of detected and suppressed errors, rerun with: -s
+==2278400== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
