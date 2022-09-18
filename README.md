@@ -50,8 +50,7 @@ There are three ways that alias can be invoked in my shell.
 <li>In my shell, the user can also unalias alias-names; if the user types <i>unalias alias-name</i> my shell removes the alias from its list. If "alias-name" does not exist as an alias, it will just continue. If the user does not specify "alias-name" or there are too many arguments to unalias my shell prints "unalias: Incorrect number of arguments." and continues.</li>
 
 </ul>
-One important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types <i>alias alias some-string</i>, <i>alias unalias some-string</i>, or <i>alias exit some-string</i>, my shell prints to stderr "alias: Too dangerous to alias that." and continues.
-  
+One important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types <i>alias alias some-string</i>, <i>alias unalias some-string</i>, or <i>alias exit some-string</i>, my shell prints to stderr "alias: Too dangerous to alias that." and continues.<br /><br />
 To actually use an alias, the user can just type the alias as they would type any other command:<br /><br />
 <i>
 mysh> alias ls /bin/ls -l
