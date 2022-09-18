@@ -62,4 +62,33 @@ mysh> ls
 
 Note: Currently, running an alias with additional arguments (e.g. <i>ls -a where ls is an alias-name</i>) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name.
 
+# Running my shell locally
+My shell can be invoked by downloading this repository and executing the following command
 
+<i>./mysh [batch-file]</i>
+
+The command line argument to my shell can be interpreted as follows:
+<ul>
+   <li>batch-file: an optional argument. If present, my shell will read each line of the batch-file for commands to be executed. If not present, my shell will run in interactive mode by printing a prompt to the user at stdout and reading the command from stdin.</li>
+</ul>
+
+For example, if a user runs my shell as
+
+<li>./mysh file1.txt</li>
+
+then my shell will read commands from file1.txt until it sees the exit command.
+
+The following cases are considered errors; in each case, my shell will print a message using write() to STDERR_FILENO and exit with a return code of 1:
+<ul>
+   <li>An incorrect number of command line arguments will result in printing "Usage: mysh [batch-file]" as an error message.</li>
+   <li>The batch file does not exist or cannot be opened will result in printing "Error: Cannot open file foo." (assuming the file was named foo) as an error message.</li>
+    <li>A command does not exist or cannot be executed will result in printing "job: Command not found." (assuming the command was named job) to STDERR_FILENO and this time the shell will continue processing.</li>
+</ul>
+My shell can also handle the following scenarios, which are not errors:
+<ul>
+   <li>An empty command line.<li>
+   <li>White spaces include tabs and spaces.</li>
+   <li>Multiple white spaces on an otherwise empty command line.</li>
+   <li>Multiple white spaces between command-line arguments, including before the first command on a line and after the last command.</li>
+   <li>Batch file ends without exit command or user types 'Ctrl-D' as a command in interactive mode.</li>
+</ul>
