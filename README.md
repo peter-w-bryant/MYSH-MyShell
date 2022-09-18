@@ -57,7 +57,9 @@ To actually use an alias, the user can just type the alias as they would type an
 <i>
 mysh> alias ls /bin/ls -l
 mysh> ls
-</i>\n
+</i>
+
+
 Note: Currently, running an alias with additional arguments (e.g. <i>ls -a where ls is an alias-name</i>) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name.
 
 
