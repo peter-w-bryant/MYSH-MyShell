@@ -28,7 +28,7 @@ As for a few special cases I have implemented:
   <li>Multiple files to the right of the redirection sign (e.g. /bin/ls > file1.txt file2.txt).</li>
   <li>Not specifying an output file (e.g. /bin/ls > )</li>
 </ul>
-.. are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
+are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
 
 ### 2.3) Aliases
 At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
@@ -43,13 +43,14 @@ I think it is important to note that alias is an example of a "built-in" command
 
 There are three ways that alias can be invoked in my shell. 
 <ul>
-If the user types the word alias, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. <i>alias ls /bin/ls -l -a</i>). (Special case: If the alias-name was already being used, I just replace the old value with the new value). If the user just types alias, my shell displays all the aliases that have been set up with one per line (first the alias-name, then a single space, and then the corresponding replacement value, with each token separated by exactly one space).
+<li>If the user types the word alias, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. <i>alias ls /bin/ls -l -a</i>). (Special case: If the alias-name was already being used, I just replace the old value with the new value). If the user just types alias, my shell displays all the aliases that have been set up with one per line (first the alias-name, then a single space, and then the corresponding replacement value, with each token separated by exactly one space).</li>
 
-If the user types alias followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.  
+<li>If the user types alias followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.</li>
 
-In my shell, the user can also unalias alias-names; if the user types unalias <alias-name> my shell removes the alias from its list. If <alias-name> does not exist as an alias, it will just continue. If the user does not specify <alias-name> or there are too many arguments to unalias my shell prints 
-"unalias: Incorrect number of arguments." and continues.
+<li>In my shell, the user can also unalias alias-names; if the user types unalias <alias-name> my shell removes the alias from its list. If <alias-name> does not exist as an alias, it will just continue. If the user does not specify <alias-name> or there are too many arguments to unalias my shell prints 
+"unalias: Incorrect number of arguments." and continues.</li>
 
+<ul>
 Important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types "alias alias some-string", "alias unalias some-string", or "alias exit some-string", my shell prints to stderr "alias: Too dangerous to alias that." and continues.
   
 To actually use an alias, the user can just type the alias as they would type any other command:
