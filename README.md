@@ -71,7 +71,7 @@ The command line argument to my shell can be interpreted as follows:
 For example, if a user runs my shell as
 
 <li>./mysh file1.txt</li><br />
-then my shell will read commands from file1.txt until it sees the exit command.<br />
+then my shell will read commands from file1.txt until it sees the exit command.<br /><br />
 
 The following cases are considered errors; in each case, my shell will print a message using write() to STDERR_FILENO and exit with a return code of 1:
 <ul>
