@@ -33,7 +33,7 @@ As for a few special cases I have implemented:
 ### 2.3) Aliases
 At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
 
-For example, you could set up:
+For example, a user could set up:
 
 <i>mysh> alias ls /bin/ls</i>
 
