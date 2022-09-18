@@ -86,7 +86,7 @@ The following cases are considered errors; in each case, my shell will print a m
 </ul>
 My shell can also handle the following scenarios, which are not errors:
 <ul>
-   <li>An empty command line.<li>
+   <li>An empty command line.</li>
    <li>White spaces include tabs and spaces.</li>
    <li>Multiple white spaces on an otherwise empty command line.</li>
    <li>Multiple white spaces between command-line arguments, including before the first command on a line and after the last command.</li>
