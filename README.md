@@ -71,9 +71,7 @@ The command line argument to my shell can be interpreted as follows:
 
 For example, if a user runs my shell as
 
-```
-./mysh file1.txt
-```
+```./mysh file1.txt```
 
 then my shell will read commands from file1.txt until it sees the exit command.<br /><br />
 
