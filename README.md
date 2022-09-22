@@ -22,7 +22,7 @@ The exact format of redirection is:
 
 <b>a command</b> (along with its arguments, if present), any number of white spaces (including none), the <b>redirection symbol ></b>, any number of white spaces (including none), followed by <b>a filename</b>.
 
-As for a few special cases I have implemented:
+As for a few special cases:
 <ul>
   <li>Multiple redirection operators (e.g. /bin/ls > > file.txt ), starting with a redirection sign (e.g. > file.txt).</li>
   <li>Multiple files to the right of the redirection sign (e.g. /bin/ls > file1.txt file2.txt).</li>
