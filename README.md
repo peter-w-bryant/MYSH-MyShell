@@ -9,6 +9,7 @@ When a user types in a command, my shell creates a child process that executes t
 
 <p align="center">
   <img src='https://github.com/peter-w-bryant/MYSH-MyShell/blob/main/images/flowOfExecution.png' width='450px' height='auto'>
+  <i>Figure 1: High-Level Flow of Execution Diagram</i>
 </p>
 
 In essence, my shell: repeatedly prints a prompt (if in interactive mode), parses the input, executes the command specified on that line of input, and waits for the command to finish.
@@ -23,19 +24,19 @@ Besides the most basic function of executing commands, my shell (called mysh) pr
 All of which are described in more detail below.
 
 ## Features
-### Modes: Interactive vs. Batch
+### Interactive vs. Batch Mode
 My shell can be run in two modes: interactive and batch, which is determined when the shell is started. If my shell is started with no arguments (i.e., ```./mysh```) , it will run in interactive mode; if my shell is given the name of a file (e.g., ```./mysh batch-file```), it runs in batch mode. 
 
 In <b>both interactive and batch mode</b>, my shell terminates when it sees the exit command on a line or reaches the end of the input stream (i.e., the end of the batch file or the user types 'Ctrl-D').  
 
-### Interactive Mode
+#### Interactive Mode
 After compiling the project, simply run the executable in order to enter <b>interactive mode</b>,
 
 ```./mysh```
 
 In <b>interactive mode</b>, my shell displays the prompt "mysh>" and the user can type in a command at the prompt.
 
-### Batch Mode
+#### Batch Mode
 In <b>batch mode</b>, my shell is started by specifying a batch file on its command line; the batch file contains the list of commands (each on its own line) that should be executed. In batch mode, the shell echos each line read from the batch file back to the user (stdout) before executing it.
 
 
