@@ -89,27 +89,29 @@ In any of these cases, my shell prints: <i>Redirection misformatted</i>. If the 
 
 ### Aliasing
 
-Most shells have the functionality for aliases. In Linux, you can use the ```alias``` command to list all currently active aliases.<sup>[2](https://www.mediacollege.com/linux/command/alias.html#:~:text=To%20see%20a%20list%20of,type%20alias%20at%20the%20prompt.&text=You%20can%20see%20there%20are,alias%2C%20use%20the%20unalias%20command)</sup> At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed. 
+Most shells have the functionality for aliases. In Linux, you can use the ```alias``` command to list all currently active aliases.<sup>[2](https://www.mediacollege.com/linux/command/alias.html#:~:text=To%20see%20a%20list%20of,type%20alias%20at%20the%20prompt.&text=You%20can%20see%20there%20are,alias%2C%20use%20the%20unalias%20command)</sup> At a high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed. 
 
 For example, a user could set up:
 
 ```mysh> alias ls /bin/ls```
 
-so that within their shell session, the user can simply type ```ls``` and the executable ```/bin/ls``` will be run.
+so that within their shell session, the user can simply type ```ls``` and the executable stored in the /bin directory ```/bin/ls``` will be run.
 
-One important thing I wanted to note is that alias is an example of a "built-in" command. A built-in command means that my shell interprets this command directly; my shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how my shell itself runs.  
+One important thing I wanted to note about aliasing is that alias is an example of a "built-in" command. A built-in command means that my shell interprets this command directly; my shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how my shell itself runs.  
 
-There are three ways that alias can be invoked in my shell. 
-<ul>
-<li>If the user types the word alias, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. <i>alias ls /bin/ls -l -a</i>). (Special case: If the alias-name was already being used, I just replace the old value with the new value). If the user just types alias, my shell displays all the aliases that have been set up with one per line (first the alias-name, then a single space, and then the corresponding replacement value, with each token separated by exactly one space).</li>
+There are three ways that an alias can be invoked in my shell:
 
-<li>If the user types alias followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value, with each token separated by exactly one space; if the word does not match a current alias-name, it just continues.</li>
+1. If the user types the word ```alias```, followed by a single word (the alias-name), followed by a replacement string(s), my shell sets up an alias between the alias-name and the value (e.g. ```alias ls /bin/ls -l -a```). (Special case: If the alias-name was already being used, I just replace the old value with the new value). 
 
-<li>In my shell, the user can also unalias alias-names; if the user types <i>unalias alias-name</i> my shell removes the alias from its list. If "alias-name" does not exist as an alias, it will just continue. If the user does not specify "alias-name" or there are too many arguments to unalias my shell prints "unalias: Incorrect number of arguments." and continues.</li>
+2. If the user just types ```alias```, my shell displays all the aliases that have been set up with one per line.
 
-</ul>
-One important thing I wanted to mention: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types <i>alias alias some-string</i>, <i>alias unalias some-string</i>, or <i>alias exit some-string</i>, my shell prints to stderr "alias: Too dangerous to alias that." and continues.<br /><br />
-To actually use an alias, the user can just type the alias as they would type any other command:<br /><br />
+3. If the user types ```alias``` followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value; if the word does not match a current alias-name, it just continues execution.
+
+The user can also unalias alias-names; if the user types ```unalias alias-name``` my shell removes the alias from its list. If "alias-name" does not exist as an alias, it will just continue. If the user does not specify "alias-name" or there are too many arguments to unalias my shell prints <i>unalias: Incorrect number of arguments.</i> and continues execution.
+
+Another important thing I wanted to note: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types ```alias alias some-string```, ```alias unalias some-string```, or ```alias exit some-string```, my shell prints to stderr <i>alias: Too dangerous to alias that.</i> and continues execution.<br>
+
+To actually use an alias, the user can just type the alias as they would type any other command:<br>
 ```
 mysh> alias ls /bin/ls -l
 mysh> ls
