@@ -116,9 +116,7 @@ To actually use an alias, the user can just type the alias as they would type an
 mysh> alias ls /bin/ls -l
 mysh> ls
 ```
-<br >
-
-Note: Currently, running an alias with additional arguments (e.g. <i>ls -a where ls is an alias-name</i>) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name.
+Note: Currently, running an alias with additional arguments (e.g. ```ls -a``` where ls is an alias-name) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name. Obviously, you can just create a different alias with the optional argument and there would be no need to use optional arguments with an alias.
 
 # Running my shell locally
 My shell can be invoked by downloading this repository and executing the following command
@@ -134,13 +132,13 @@ For example, if a user runs my shell as
 
 ```./mysh file1.txt```
 
-then my shell will read commands from file1.txt until it sees the exit command.<br /><br />
+then my shell will read commands from file1.txt until it sees the exit command.<br>
 
-The following cases are considered errors; in each case, my shell will print a message using write() to STDERR_FILENO and exit with a return code of 1:
+The following cases are considered errors; in each case, my shell will print a message using ```write()``` to STDERR_FILENO and exit with a return code of 1:
 <ul>
-   <li>An incorrect number of command line arguments will result in printing "Usage: mysh [batch-file]" as an error message.</li>
-   <li>The batch file does not exist or cannot be opened will result in printing "Error: Cannot open file foo." (assuming the file was named foo) as an error message.</li>
-    <li>A command does not exist or cannot be executed will result in printing "job: Command not found." (assuming the command was named job) to STDERR_FILENO and this time the shell will continue processing.</li>
+   <li>An incorrect number of command line arguments will result in printing <i>Usage: mysh [batch-file]</i> as an error message.</li>
+   <li>The batch file does not exist or cannot be opened will result in printing <i>Error: Cannot open file foo.</i> (assuming the file was named foo) as an error message.</li>
+    <li>A command does not exist or cannot be executed will result in printing <i>job: Command not found.</i> (assuming the command was named job) to STDERR_FILENO and this time the shell will continue processing.</li>
 </ul>
 My shell can also handle the following scenarios, which are not errors:
 <ul>
