@@ -152,4 +152,3 @@ My shell can also handle the following scenarios, which are not errors:
 ## References
 1. [Lifewire](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827): What Is a Command Line Interpreter?
 2. [MediaCollege](https://www.mediacollege.com/linux/command/alias.html#:~:text=To%20see%20a%20list%20of,type%20alias%20at%20the%20prompt.&text=You%20can%20see%20there%20are,alias%2C%20use%20the%20unalias%20command.): alias command
-  
