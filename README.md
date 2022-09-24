@@ -1,6 +1,6 @@
 # Command Line Interpreter (Shell) Built on Top of Unix
 ## What is a shell?
-A command line interpreter or shell is any program that allows a user to enter commands and then executes those commands to the operating system.<sup>[1](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)</sup>
+A command line interpreter or shell is any program that allows a user to enter commands and then executes those commands to the operating system<sup>[1](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)</sup>.
 
 You can find out what shell you are currently running by executing ```echo $SHELL``` at a prompt. You can read more about the functionality of the shell you are running by looking at the man pages, in my case I access them with ```man /bin/bash```. My project definitely does not implement as much functionality as most shells.
 
@@ -104,3 +104,9 @@ My shell can also handle the following scenarios, which are not errors:
    <li>Multiple white spaces between command-line arguments, including before the first command on a line and after the last command.</li>
    <li>Batch file ends without exit command or user types 'Ctrl-D' as a command in interactive mode.</li>
 </ul> 
+
+## References
+<ol>
+  <li>[Lifewire](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)</li>
+  
+</ol>
