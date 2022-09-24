@@ -25,9 +25,19 @@ All of which are described in more detail below.
 
 ## Features
 ### Interactive vs. Batch Mode
-My shell can be run in two modes: interactive and batch, which is determined when the shell is started. If my shell is started with no arguments (i.e., ```./mysh```) , it will run in interactive mode; if my shell is given the name of a file (e.g., ```./mysh batch-file```), it runs in batch mode. 
+My shell can be run in two modes: interactive and batch, which is determined when the shell is started. If my shell is started with no arguments (e.g. ```./mysh```) , it will run in interactive mode; if my shell is given the name of a file (e.g. ```./mysh batch-file```), it runs in batch mode. 
 
-In <b>both interactive and batch mode</b>, my shell terminates when it sees the exit command on a line or reaches the end of the input stream (i.e., the end of the batch file or the user types 'Ctrl-D').  
+One aspect that is very important to note is that in <b>both interactive and batch mode</b>, my program uses ```execv()``` to execute the new command that is read in while executing in either mode. Since ```execv()``` does not search the PATH environment variable, my shell requires that full paths are specified for all commands. In order to identify the location of executables, Linux provides the very useful ```which``` command which will provide the absolute path to the executable. As a concrete example, suppose you would like to run the ```ls``` shell command to list files in the current working directory. If executing in my shell,
+
+```mysh> ls```
+
+will not work. The user would need to run,
+
+```which ls``` from their command line, get the absolute path of the executable such as ```/bin/ls```, and then run the executable as,
+
+```mysh> /bin/ls```
+
+Additionally, <b>both interactive and batch mode</b>, my shell terminates when it sees the user executes the ```exit``` command on a line or reaches the end of the input stream (i.e. the end of the batch file or the user types 'Ctrl-D').
 
 #### Interactive Mode
 After compiling the project, simply run the executable in order to enter <b>interactive mode</b>,
