@@ -35,7 +35,7 @@ will not work. The user would need to run, ```which ls``` from their command lin
 
 ```mysh> /bin/ls```
 
-Additionally, <b>both interactive and batch mode</b>, my shell terminates when it sees the user executes the ```exit``` command on a line or reaches the end of the input stream (i.e. the end of the batch file or the user types 'Ctrl-D').
+Additionally, in <b>both interactive and batch mode</b>, my shell terminates when it sees the user execute the ```exit``` command or it reaches the end of the input stream (i.e. the end of the batch file or the user types 'Ctrl-D').
 
 #### Interactive Mode
 After compiling the project, simply run the executable in order to enter <b>interactive mode</b>,
