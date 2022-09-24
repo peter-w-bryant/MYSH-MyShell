@@ -11,7 +11,7 @@ When a user types in a command, my shell creates a child process that executes t
   <img src='https://github.com/peter-w-bryant/MYSH-MyShell/blob/main/images/flowOfExecution.png' width='450px' height='auto'>
 </p>
 
-In essence, my shell is basically a loop: it repeatedly prints a prompt (if in interactive mode), parses the input, executes the command specified on that line of input, and waits for the command to finish.
+In essence, my shell: repeatedly prints a prompt (if in interactive mode), parses the input, executes the command specified on that line of input, and waits for the command to finish.
 
 Besides the most basic function of executing commands, my shell (called mysh) provides the following three features: interactive vs. batch mode, output redirection, and aliasing.
 
