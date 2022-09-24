@@ -12,7 +12,7 @@ Besides the most basic function of executing commands, my shell (called mysh) pr
 
 ## Features
 ### Modes: Interactive vs. Batch
-My shell can be run in two modes: interactive and batch, which is determined when the shell is started. If my shell is started with no arguments (i.e., ./mysh) , it will run in interactive mode; if my shell is given the name of a file (e.g., ./mysh batch-file), it runs in batch mode. 
+My shell can be run in two modes: interactive and batch, which is determined when the shell is started. If my shell is started with no arguments (i.e., ```./mysh```) , it will run in interactive mode; if my shell is given the name of a file (e.g., ```./mysh batch-file```), it runs in batch mode. 
 
 In <b>both interactive and batch mode</b>, my shell terminates when it sees the exit command on a line or reaches the end of the input stream (i.e., the end of the batch file or the user types 'Ctrl-D').  
 
