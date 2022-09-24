@@ -42,7 +42,7 @@ After compiling the project, simply run the executable in order to enter <b>inte
 
 ```./mysh```
 
-In <b>interactive mode</b>, my shell displays the prompt "mysh>" and the user can type in a command at the prompt.
+In <b>interactive mode</b>, my shell displays the prompt "mysh>" and the user can type in a command at the prompt by specifying the absolute path of the executable (such as the example we had using ```ls``` above.
 
 #### Batch Mode
 In <b>batch mode</b>, my shell is started by specifying a batch file on its command line; the batch file contains the list of commands (each on its own line) that should be executed. In batch mode, the shell echos each line read from the batch file back to the user (stdout) before executing it. For example, if a text file with the following contents was provided as a batch file,
