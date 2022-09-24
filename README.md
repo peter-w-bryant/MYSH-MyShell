@@ -8,7 +8,7 @@ You can find out what shell you are currently running by executing ```echo $SHEL
 When a user types in a command, my shell creates a child process that executes the command the user entered and then prompts for more user input when it has finished.  At a high level, my shell is a simple loop that waits for input and fork()s a new child process to execute the command; the child process then exec()s the specified command while the parent process wait()s for the child to finish before continuing with the next iteration of the loop.
 
 <p align="center">
-  <img src='https://github.com/peter-w-bryant/MYSH-MyShell/blob/main/images/flowOfExecution.png' width='450px' height='auto'>
+  <img src='https://github.com/peter-w-bryant/MYSH-MyShell/blob/main/images/flowOfExecution.png' width='450px' height='auto'><br>
   <i>Figure 1: High-Level Flow of Execution Diagram</i>
 </p>
 
