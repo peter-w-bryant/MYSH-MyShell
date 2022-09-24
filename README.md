@@ -74,8 +74,8 @@ The exact format of redirection is:
 <b>a path to the executable</b> (along with any optional arguments, if present), the <b>redirection symbol ></b>, followed by <b>a filename</b>. Additionally, my shell can handle any number of white spaces (including none), so our above example can be written in the following equivalent ways,
 
 ```
-/bin/ls -la             /tmp       >     output.txt
-/bin/ls -la /tmp>output.txt
+mysh> /bin/ls -la             /tmp       >     output.txt
+mysh> /bin/ls -la /tmp>output.txt
 ```
 
 There are, however, a few special cases (all of which are treated as errors):
