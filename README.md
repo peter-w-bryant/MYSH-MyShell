@@ -63,7 +63,7 @@ exit
 ```
 
 ### Redirection
-To enable a shell user who prefers to send the output of a program to a file rather than to the screen, I have included redirection (i.e. usually, a shell redirects standout output to a file with the '>' character; my shell includes this feature).
+To enable a shell user who prefers to send the output of a program to a file rather than to stdout, I have included redirection.
 
 For example, if a user types ```/bin/ls -la /tmp > output``` into my shell, nothing is printed on the screen. Instead, the standard output of the ls program is rerouted to the file output. Additionally, if the output file exists before the shell is run, my shell overwrites it (after truncating it, which sets the file's size to zero bytes). 
 
