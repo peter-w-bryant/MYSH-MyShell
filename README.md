@@ -44,7 +44,7 @@ As for a few special cases:
 </ul>
 are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
 
-### Aliases
+### Aliasing
 At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
 
 For example, a user could set up:
