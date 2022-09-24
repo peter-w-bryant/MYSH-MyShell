@@ -65,19 +65,27 @@ exit
 ### Redirection
 To enable a shell user who prefers to send the output of a program to a file rather than to stdout, I have included the functionality to handle redirection.
 
-For example, if a user types ```/bin/ls -la /tmp > output.txt``` into my shell, nothing is printed on the screen. Instead, the standard output of the ls program is rerouted to the file output.txt. Additionally, if the output file exists before the shell is run, my shell overwrites it (after truncating it, setting the file's size to zero bytes). 
+For example, if a user types ```/bin/ls -la /tmp > output.txt``` into my shell, nothing is printed on the screen. Instead, the standard output of the ls program is rerouted to the file output.txt. Additionally, if the output file exists before the shell is run, my shell overwrites it (after truncating it, setting the file's size to zero bytes). For this example, we are listing all files in the temporary ```/tmp``` directory in a long list format and writing it to the output.txt file.
 
 The exact format of redirection is: 
 
-<b>a command</b> (along with its arguments, if present), any number of white spaces (including none), the <b>redirection symbol ></b>, any number of white spaces (including none), followed by <b>a filename</b>.
+``` /path-to-executable -options > file-location ```
 
-As for a few special cases:
+<b>a path to the executable</b> (along with any optional arguments, if present), the <b>redirection symbol ></b>, followed by <b>a filename</b>. Additionally, my shell can handle any number of white spaces (including none), so our above example can be written in the following equivalent ways,
+
+```
+/bin/ls -la             /tmp       >     output.txt
+/bin/ls -la /tmp>output.txt
+```
+
+There are, however, a few special cases (all of which are treated as errors):
 <ul>
-  <li>Multiple redirection operators (e.g. /bin/ls > > file.txt ), starting with a redirection sign (e.g. > file.txt).</li>
+  <li>Multiple redirection operators (e.g. /bin/ls > > file.txt ), or starting with a redirection sign (e.g. > file.txt).</li>
   <li>Multiple files to the right of the redirection sign (e.g. /bin/ls > file1.txt file2.txt)</li> 
   <li>Not specifying an output file (e.g. /bin/ls > )</li>
 </ul>
-are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
+
+In any of these cases, my shell prints: <i>Redirection misformatted</i>. If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints <i>Cannot write to file foo.txt.</i> In these cases, my shell doesn't execute the command and continues to the next line.
 
 ### Aliasing
 At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
