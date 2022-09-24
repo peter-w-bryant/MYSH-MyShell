@@ -106,7 +106,5 @@ My shell can also handle the following scenarios, which are not errors:
 </ul> 
 
 ## References
-<ol>
-  [Lifewire](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)
+1. [Lifewire](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)
   
-</ol>
