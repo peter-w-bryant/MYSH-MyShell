@@ -14,6 +14,8 @@ Besides the most basic function of executing commands, my shell (called mysh) pr
 ### Modes: Interactive vs. Batch
 My shell can be run in two modes: interactive and batch, which is determined when the shell is started. If my shell is started with no arguments (i.e., ./mysh) , it will run in interactive mode; if my shell is given the name of a file (e.g., ./mysh batch-file), it runs in batch mode. 
 
+In <b>both interactive and batch mode</b>, my shell terminates when it sees the exit command on a line or reaches the end of the input stream (i.e., the end of the batch file or the user types 'Ctrl-D').  
+
 ### Interactive Mode
 After compiling the project, simply run the executable in order to enter <b>interactive mode</b>,
 
@@ -21,13 +23,10 @@ After compiling the project, simply run the executable in order to enter <b>inte
 
 In <b>interactive mode</b>, my shell displays the prompt "mysh>" and the user can type in a command at the prompt.
 
-
-
-
-## Batch Mode
+### Batch Mode
 In <b>batch mode</b>, my shell is started by specifying a batch file on its command line; the batch file contains the list of commands (each on its own line) that should be executed. In batch mode, the shell echos each line read from the batch file back to the user (stdout) before executing it.
 
-In <b>both interactive and batch mode</b>, my shell terminates when it sees the exit command on a line or reaches the end of the input stream (i.e., the end of the batch file or the user types 'Ctrl-D').  
+
 ### Redirection
 To enable a shell user who prefers to send the output of a program to a file rather than to the screen, I have included redirection (i.e. usually, a shell redirects standout output to a file with the '>' character; my shell includes this feature).
 
