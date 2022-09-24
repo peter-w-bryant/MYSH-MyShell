@@ -88,7 +88,8 @@ There are, however, a few special cases (all of which are treated as errors):
 In any of these cases, my shell prints: <i>Redirection misformatted</i>. If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints <i>Cannot write to file foo.txt.</i> In these cases, my shell doesn't execute the command and continues to the next line.
 
 ### Aliasing
-At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed.  
+
+Most shells have the functionality for aliases. In Linux, you can use the ```alias``` command to list all currently active aliases. At high level, an alias is just a short-cut so that the user can type in something simple and have something more complex (or more safe) be executed. <sup>[2](https://www.mediacollege.com/linux/command/alias.html#:~:text=To%20see%20a%20list%20of,type%20alias%20at%20the%20prompt.&text=You%20can%20see%20there%20are,alias%2C%20use%20the%20unalias%20command)</sup>
 
 For example, a user could set up:
 
@@ -96,7 +97,7 @@ For example, a user could set up:
 
 so that within their shell session, the user can simply type ```ls``` and the executable ```/bin/ls``` will be run.
 
-I think it is important to note that alias is an example of a "built-in" command. A built-in command means that my shell interprets this command directly; my shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how my shell itself runs.  
+One important thing I wanted to note is that alias is an example of a "built-in" command. A built-in command means that my shell interprets this command directly; my shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how my shell itself runs.  
 
 There are three ways that alias can be invoked in my shell. 
 <ul>
