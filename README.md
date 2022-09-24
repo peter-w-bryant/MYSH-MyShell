@@ -1,5 +1,6 @@
 # Command Line Interpreter (Shell) Built on Top of Unix
 ## What is a shell?
+A command line interpreter or shell is any program that allows a user to enter commands and then executes those commands to the operating system. (1)[https://www.lifewire.com/what-is-a-command-line-interpreter-2625827]
 
 You can find out what shell you are currently running by executing ```echo $SHELL``` at a prompt. You can read more about the functionality of the shell you are running by looking at the man pages, in my case I access them with ```man /bin/bash```. My project definitely does not implement as much functionality as most shells.
 
@@ -39,7 +40,7 @@ The exact format of redirection is:
 As for a few special cases:
 <ul>
   <li>Multiple redirection operators (e.g. /bin/ls > > file.txt ), starting with a redirection sign (e.g. > file.txt).</li>
-  <li>Multiple files to the right of the redirection sign (e.g. ```/bin/ls > file1.txt file2.txt)```</li>
+  <li>Multiple files to the right of the redirection sign (e.g. /bin/ls > file1.txt file2.txt)</li> 
   <li>Not specifying an output file (e.g. /bin/ls > )</li>
 </ul>
 are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
@@ -51,7 +52,7 @@ For example, a user could set up:
 
 ```mysh> alias ls /bin/ls```
 
-so that within their shell session, the user can simply type ls and the executable /bin/ls will be run.
+so that within their shell session, the user can simply type ```ls``` and the executable ```/bin/ls``` will be run.
 
 I think it is important to note that alias is an example of a "built-in" command. A built-in command means that my shell interprets this command directly; my shell does not exec() the built-in command and run it as a separate process; instead, the built-in command impacts how my shell itself runs.  
 
