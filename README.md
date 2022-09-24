@@ -2,7 +2,7 @@
 ## What is a shell?
 A command line interpreter or shell is blanket term for any program that allows a user to enter commands and then executes those commands to the operating system<sup>[1](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)</sup>.
 
-You can find out what shell you are currently running by executing ```echo $SHELL``` at a prompt. You can read more about the functionality of the shell you are running by looking at the man pages, in my case I access them with ```man /bin/bash```. My project definitely does not implement as much functionality as most shells.
+You can find out what shell you are currently running by executing ```echo $SHELL``` at a prompt. You can read more about the functionality of the shell you are running by looking at its documentation (man pages), in my case I access them with ```man /bin/bash```. My project definitely does not implement as much functionality as most shells.
 
 ## General
 When a user types in a command, my shell creates a child process that executes the command the user entered and then prompts for more user input when it has finished.  At a high level, my shell is a simple loop that waits for input and fork()s a new child process to execute the command; the child process then exec()s the specified command while the parent process wait()s for the child to finish before continuing with the next iteration of the loop.
