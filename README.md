@@ -1,8 +1,9 @@
 # Command Line Interpreter (Shell) Built on Top of Unix
+## What is a shell?
+
+You can find out what shell you are currently running by executing ```echo $SHELL``` at a prompt. You can read more about the functionality of the shell you are running by looking at the man pages, in my case I access them with ```man /bin/bash```. My project definitely does not implement as much functionality as most shells.
+
 ## General
-
-You can find out what shell you are currently running by executing ```echo $SHELL``` at a prompt. You can read more about the functionality of the shell you are running you can look at the man cases, in my case ```man /bin/bash```. My project definitely does not implement as much functionality as most shells.
-
 When a user types in a command, my shell creates a child process that executes the command the user entered and then prompts for more user input when it has finished.  At a high level, my shell is a simple loop that waits for input and fork()s a new child process to execute the command; the child process then exec()s the specified command while the parent process wait()s for the child to finish before continuing with the next iteration of the loop.
 
 In essence, my shell is basically a loop: it repeatedly prints a prompt (if in interactive mode), parses the input, executes the command specified on that line of input, and waits for the command to finish.
