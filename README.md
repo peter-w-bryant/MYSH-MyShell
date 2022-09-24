@@ -107,7 +107,7 @@ There are three ways that an alias can be invoked in my shell:
 
 3. If the user types ```alias``` followed by a word, if the word matches a current alias-name, my shell prints the alias-name and the corresponding replacement value; if the word does not match a current alias-name, it just continues execution.
 
-The user can also unalias alias-names; if the user types ```unalias alias-name``` my shell removes the alias from its list. If "alias-name" does not exist as an alias, it will just continue. If the user does not specify "alias-name" or there are too many arguments to unalias my shell prints <i>unalias: Incorrect number of arguments.</i> and continues execution.
+The user can also unalias alias-names; if the user types ```unalias alias-name``` my shell removes the alias from its list. If <i>alias-name</i> does not exist as an alias, it will just continue. If the user does not specify <i>alias-name</i> or there are too many arguments to unalias my shell prints <i>unalias: Incorrect number of arguments.</i> and continues execution.
 
 Another important thing I wanted to note: there are three words that cannot be used as alias-names: alias, unalias, and exit. For example, if the user types ```alias alias some-string```, ```alias unalias some-string```, or ```alias exit some-string```, my shell prints to stderr <i>alias: Too dangerous to alias that.</i> and continues execution.<br>
 
@@ -117,6 +117,7 @@ mysh> alias ls /bin/ls -l
 mysh> ls
 ```
 <br >
+
 Note: Currently, running an alias with additional arguments (e.g. <i>ls -a where ls is an alias-name</i>) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name.
 
 # Running my shell locally
