@@ -31,9 +31,7 @@ One aspect that is very important to note is that in <b>both interactive and bat
 
 ```mysh> ls```
 
-will not work. The user would need to run,
-
-```which ls``` from their command line, get the absolute path of the executable such as ```/bin/ls```, and then run the executable as,
+will not work. The user would need to run, ```which ls``` from their command line, get the absolute path of the executable such as ```/bin/ls```, and then run the executable as,
 
 ```mysh> /bin/ls```
 
