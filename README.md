@@ -13,7 +13,14 @@ When a user types in a command, my shell creates a child process that executes t
 
 In essence, my shell: repeatedly prints a prompt (if in interactive mode), parses the input, executes the command specified on that line of input, and waits for the command to finish.
 
-Besides the most basic function of executing commands, my shell (called mysh) provides the following three features: interactive vs. batch mode, output redirection, and aliasing.
+Besides the most basic function of executing commands, my shell (called mysh) provides the following three features: 
+<ol>
+  <li>interactive vs. batch mode</li>
+  <li>output redirection</li>
+  <li>aliasing</li>
+</ol>
+
+All of which are described in more detail below.
 
 ## Features
 ### Modes: Interactive vs. Batch
