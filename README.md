@@ -30,7 +30,7 @@ In <b>batch mode</b>, my shell is started by specifying a batch file on its comm
 ### Redirection
 To enable a shell user who prefers to send the output of a program to a file rather than to the screen, I have included redirection (i.e. usually, a shell redirects standout output to a file with the '>' character; my shell includes this feature).
 
-For example, if a user types "/bin/ls -la /tmp > output" into my shell, nothing is printed on the screen. Instead, the standard output of the ls program is rerouted to the file output. Additionally, if the output file exists before the shell is run, my shell overwrites it (after truncating it, which sets the file's size to zero bytes). 
+For example, if a user types ```/bin/ls -la /tmp > output``` into my shell, nothing is printed on the screen. Instead, the standard output of the ls program is rerouted to the file output. Additionally, if the output file exists before the shell is run, my shell overwrites it (after truncating it, which sets the file's size to zero bytes). 
 
 The exact format of redirection is: 
 
@@ -39,7 +39,7 @@ The exact format of redirection is:
 As for a few special cases:
 <ul>
   <li>Multiple redirection operators (e.g. /bin/ls > > file.txt ), starting with a redirection sign (e.g. > file.txt).</li>
-  <li>Multiple files to the right of the redirection sign (e.g. /bin/ls > file1.txt file2.txt).</li>
+  <li>Multiple files to the right of the redirection sign (e.g. ```/bin/ls > file1.txt file2.txt)```</li>
   <li>Not specifying an output file (e.g. /bin/ls > )</li>
 </ul>
 are all errors.  My shell prints: "Redirection misformatted". If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints "Cannot write to file foo.txt." In these cases, my shell doesn't execute the command and continues to the next line.
