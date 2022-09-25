@@ -118,11 +118,6 @@ mysh> ls
 ```
 Note: Currently, running an alias with additional arguments (e.g. ```ls -a``` where ls is an alias-name) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name. Obviously, you can just create a different alias with the optional argument and there would be no need to use optional arguments with an alias.
 
-## Executing Commands
-
-```int execv(const char *pathname, char *const argv[]);```<br><br>
-&rarr;The char ```*const argv[]``` argument is an array of pointers to null-terminated strings that represent the argument list available to the new program.  The first argument, by convention, should point to the filename associated with the file being executed.  The array of pointers must be terminated by a null pointer.
-  
 # Running my shell locally
 My shell can be invoked by downloading this repository and executing the following command
 
