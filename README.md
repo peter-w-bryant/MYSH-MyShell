@@ -120,8 +120,8 @@ Note: Currently, running an alias with additional arguments (e.g. ```ls -a``` wh
 
 ## Executing Commands
 
-```int execv(const char *pathname, char *const argv[]);```
-&emsp;The char ```*const argv[]``` argument is an array of pointers to null-terminated strings that represent the argument list available to the new program.  The first argument, by convention, should point to the filename associated with the file being executed.  The array of pointers must be terminated by a null pointer.
+```int execv(const char *pathname, char *const argv[]);```<br>
+&rarr;The char ```*const argv[]``` argument is an array of pointers to null-terminated strings that represent the argument list available to the new program.  The first argument, by convention, should point to the filename associated with the file being executed.  The array of pointers must be terminated by a null pointer.
   
 # Running my shell locally
 My shell can be invoked by downloading this repository and executing the following command
