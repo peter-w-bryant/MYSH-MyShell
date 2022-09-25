@@ -4,7 +4,7 @@
 #include <stdlib.h>   // exit()
 #include <ctype.h>    // isspace()
 // #include <sys/types.h> // for locks, semaphores, and other types of IPC (interprocess communication)
-// #include <stdio.h> // printf() -> unused, now using write() instead
+#include <stdio.h> // printf() -> unused, now using write() instead
 
 // Linked list node containing alias and corresponding executable path
 struct AliasListItem
