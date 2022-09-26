@@ -79,11 +79,10 @@ mysh> /bin/ls -la /tmp>output.txt
 ```
 
 There are, however, a few special cases (all of which are treated as errors):
-<ul>
-  <li>Multiple redirection operators (e.g. /bin/ls > > file.txt ), or starting with a redirection sign (e.g. > file.txt).</li>
-  <li>Multiple files to the right of the redirection sign (e.g. /bin/ls > file1.txt file2.txt)</li> 
-  <li>Not specifying an output file (e.g. /bin/ls > )</li>
-</ul>
+1. Multiple redirection operators (e.g. ```/bin/ls > > file.txt```), or starting with a redirection sign (e.g. ```> file.txt```).
+2. Multiple files to the right of the redirection sign (e.g. ```/bin/ls > file1.txt file2.txt```).
+3. Not specifying an output file (e.g. ```/bin/ls >```).
+
 
 In any of these cases, my shell prints: <i>Redirection misformatted</i>. If the output file cannot be opened for some reason (e.g., the user doesn't have write permission or the name is an existing directory), my shell prints <i>Cannot write to file foo.txt.</i> In these cases, my shell doesn't execute the command and continues to the next line.
 
