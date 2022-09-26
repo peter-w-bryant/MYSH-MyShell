@@ -118,7 +118,7 @@ mysh> ls
 Note: Currently, running an alias with additional arguments (e.g. ```ls -a``` where ls is an alias-name) is undefined behavior. I have not configured this functionality, so I require that all alias calls consist of only the alias-name. Obviously, you can just create a different alias with the optional argument and there would be no need to use optional arguments with an alias.
 
 # Running my shell locally
-My shell can be invoked by downloading this repository and executing the following command
+My shell can be invoked by downloading this repository and executing the following command on a Linux machine,
 
 ```./mysh [batch-file]```
 
