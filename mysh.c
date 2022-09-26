@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
                 int contains_char = 0;       // Flag to determine if the line contains any non-whitespace characters
                 int alias_comm = 0;          // Flag to determine if we are in alias command
 
-                // If we are in in_interactive mode, echo the command back to the user
+                // If we are in batch mode, echo the command back to the user
                 if (in_interactive == 0)
                         write(STDOUT_FILENO, line, strlen(line));
 
@@ -81,12 +81,12 @@ int main(int argc, char *argv[])
                         y++;                       // Increment the character counter
                 }
 
-                // If contains_char is 1, then the line contains non-whitespace characters, so will parse it
+                // If contains_char is 1, then the line contains non-whitespace characters, so I will parse it
                 if (contains_char == 1)
                 {
                         // Flags
-                        int isspace_before = 0; // 1 if we have a whitespace character before the current character
-                        int isspace_after = 0;  // 1 if we have a whitespace character after the current character
+                        int isspace_before = 0; // 1 if we have a whitespace character before the current character and not after
+                        int isspace_after = 0;  // 1 if we have a whitespace character after the current character but not before
                         int isspace_both = 0;   // 1 if we have a whitespace character before and after the current character
                         int isspace_none = 0;   // 1 if we have no whitespace characters before and after the current character
 
@@ -257,14 +257,12 @@ int main(int argc, char *argv[])
                         }
                         command_parse[num_commands] = NULL; // Add the NULL terminator to the command_parse array, so execv() knows when to stop
 
-                        // If we are going forward with executing the program, and we are not redirecting its output
+                        // If we are going forward with executing the program, and we are redirecting its output
                         if (redirection && exec_program)
                         {
                                 // If there is whitespace before the redirection character but not after it, free the memory after the file name
                                 if (isspace_before)
                                 {
-                                        printf("redir_location+1 = %d | command_parse[redir_location+1] = %s\n", redir_location + 1, command_parse[redir_location + 1]);
-
                                         // Iterate through the command_parse array, freeing the memory after the file name, and stripping the command_parse array of all characters
                                         // starting with the redirection character and after.
                                         for (i = redir_location + 1; command_parse[i]; i++)
