@@ -63,7 +63,7 @@ exit
 ```
 
 ### Redirection
-To enable a shell user who prefers to send the output of a program to a file rather than to stdout, I have included the functionality to handle redirection.
+To enable a shell user who prefers to send the output of a program to a file rather than to stdout, I have included the functionality to handle output redirection.
 
 For example, if a user types ```/bin/ls -la /tmp > output.txt``` into my shell, nothing is printed on the screen. Instead, the standard output of the ls program is rerouted to the file output.txt. Additionally, if the output file exists before the shell is run, my shell overwrites it (after truncating it, setting the file's size to zero bytes). For this example, we are listing all files in the temporary ```/tmp``` directory in a long list format and writing it to the output.txt file.
 
